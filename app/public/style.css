@@ -1,0 +1,256 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+
+  min-height: 100svh;
+}
+
+form + p,
+form p {
+  text-align: center;
+}
+
+input,
+button {
+  border: unset;
+  border-radius: 4px;
+  padding: 15px 30px;
+  font-size: larger;
+}
+
+button {
+  color: whitesmoke;
+  background-color: #020220;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 600px;
+  gap: 10px;
+
+  margin: auto;
+  padding: 25px 10px;
+
+  border-radius: 10px;
+
+  background-color: whitesmoke;
+
+  backdrop-filter: blur(1rem);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 15px 0 0;
+  gap: 10px;
+  width: 70%;
+}
+
+.input {
+  font-family: monospace;
+  font-size: 1.3rem;
+
+  width: 100%;
+  padding: 7px 0;
+
+  border: 0;
+  border-bottom: 2px solid whitesmoke;
+  border-image: linear-gradient(to right, whitesmoke, #020220);
+  border-width: 3px;
+  border-image-slice: 1;
+
+  outline: 0;
+
+  background: transparent;
+  color: #020220;
+
+  transition: border-color 0.2s;
+  transition: border 0.2s ease-in;
+}
+
+.input::placeholder {
+  color: transparent;
+}
+
+.username:placeholder-shown ~ .label-username,
+.password:placeholder-shown ~ .label-password,
+.email:placeholder-shown ~ .label-email {
+  font-size: 1.3rem;
+  cursor: text;
+  top: -40px;
+}
+
+.label-password,
+.label-username,
+.label-email {
+  font-size: 1rem;
+
+  position: relative;
+
+  display: block;
+
+  color: #0b0b2055;
+  transition: 0.2s;
+}
+.label-password,
+.label-email,
+.label-username {
+  top: -70px;
+}
+
+.username:focus ~ .label-username,
+.password:focus ~ .label-password,
+.email:focus ~ .label-email {
+  font-size: 1rem;
+  font-weight: 700;
+
+  position: relative;
+
+  display: block;
+
+  color: #0b0b2055;
+
+  transition: 0.2s;
+}
+.username:focus ~ .label-username,
+.email:focus ~ .label-email,
+.password:focus ~ .label-password {
+  top: -70px;
+}
+
+.username:focus,
+.password:focus,
+.email:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to left, whitesmoke, #020220);
+  border-image-slice: 1;
+}
+
+.input:required,
+.input:invalid {
+  box-shadow: none;
+}
+
+.loader {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+.loader-active {
+  display: block;
+  opacity: 100;
+}
+
+.error {
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hidden {
+  display: none;
+}
+.extra {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+/* Background animation */
+
+.hero {
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  background-color: #020220;
+}
+
+.cube {
+  z-index: -1;
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #11998e;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cube 12s ease-in forwards infinite;
+  animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+  border-color: #6dc08d;
+}
+.cube:nth-child(2) {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  -webkit-animation-delay: 10s;
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+@-webkit-keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}

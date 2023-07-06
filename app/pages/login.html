@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="login.js" defer></script>
+    <script src="users.js" defer></script>
+  </head>
+  <body class="hero">
+    <section class="container">
+      <h1>Login</h1>
+      <p>Enter your credentials to access the administration area.</p>
+      <form class="form" id="form">
+        <input
+          type="text"
+          class="input username"
+          name="username"
+          id="username"
+          placeholder="Username"
+          required
+        />
+        <label for="username" class="label label-username">Username</label>
+        <input
+          type="password"
+          class="input password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          autocomplete="on"
+          required
+        />
+        <label for="password" class="label label-password">Password</label>
+        <button type="submit" class="submit">Login</button>
+      </form>
+      <span class="error hidden">
+        <svg width="24px" height="24px" viewBox="0 0 24 24">
+          <g
+            id="error"
+            stroke="none"
+            fill="none"
+            fill-rule="evenodd"
+            transform="translate(3.000000, 3.000000)"
+          >
+            <path
+              d="M9,12 C9.55228475,12 10,12.4477153 10,13 C10,13.5522847 9.55228475,14 9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 Z"
+              class="icon_svg-fill_as_stroke"
+              fill="#f00"
+              fill-rule="nonzero"
+            ></path>
+            <path
+              d="M9,9.5 L9,4.5 L9,9.5 Z M9,18 C4.029,18 0,13.971 0,9 C0,4.029 4.029,0 9,0 C13.971,0 18,4.029 18,9 C18,13.971 13.971,18 9,18 Z"
+              class="icon_svg-stroke"
+              stroke="#f00"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            ></path>
+          </g>
+        </svg>
+        No account has been found for this email. Please try again or register.
+      </span>
+      <div class="extra">
+        <p>Do you need an account to login in?</p>
+        <a href="register" rel="noopener">Create an Account</a>
+      </div>
+    </section>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </body>
+</html>
